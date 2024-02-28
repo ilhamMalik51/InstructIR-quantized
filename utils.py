@@ -21,7 +21,7 @@ def saveImage(filename, image):
     imageTMP = np.clip(image * 255.0, 0, 255).astype('uint8')
     imageio.imwrite(filename, imageTMP)
 
-def save_rgb (img, filename):
+def save_rgb(img, filename):
     
     img = np.clip(img, 0., 1.)
     if np.max(img) <= 1:
@@ -32,7 +32,7 @@ def save_rgb (img, filename):
     cv2.imwrite(filename, img)
 
     
-def load_img (filename, norm=True,):
+def load_img(filename, norm=True,):
     img = np.array(Image.open(filename).convert("RGB"))
     if norm:   
         img = img / 255.
